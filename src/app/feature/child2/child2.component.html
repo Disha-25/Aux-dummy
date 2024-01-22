@@ -1,0 +1,16 @@
+<h2>Parameter List</h2>
+<ul>
+  <li *ngFor="let p of ps">
+    <a [routerLink]="['/feature', { outlets: { aux2: getChildRoute(p) } }]" >
+      {{ p.name }}
+    </a>
+  </li>
+</ul>
+<p>child2 works!</p>
+
+<div class="grandchild-container">
+  <!-- Use ngFor to dynamically create router-outlets based on p.id -->
+  <ng-container *ngFor="let p of ps">
+    <router-outlet [name]="'grand' + p.id"></router-outlet>
+  </ng-container>
+</div>

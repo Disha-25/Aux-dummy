@@ -1,0 +1,15 @@
+<div>
+      <h2>Feature Component</h2>
+      <p>Main Content of FeatureComponent</p>
+    </div>
+<!-- Link to child1 -->
+<p><a [routerLink]="['/feature', { outlets: { aux1: 'child1' } }]">Go to Child1</a></p>
+
+<!-- Link to child2 -->
+<p><a [routerLink]="['/feature', { outlets: { aux2: 'child2' } }]">Go to Child2</a></p>
+
+    <!-- Auxiliary Content -->
+    <div class="auxiliary-content">
+      <router-outlet name="aux1"></router-outlet>
+      <router-outlet name="aux2"></router-outlet>
+    </div>

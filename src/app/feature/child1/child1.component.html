@@ -1,0 +1,16 @@
+<div>
+  <h2>Child1 Component</h2>
+  <p>Main Content of Child1Component</p>
+</div>
+<p><a [routerLink]="['/feature', { outlets: { aux1: ['child1', { outlets: { grand1: 'grandchild1' } }] } }]">
+  Go to Grandchild1
+</a></p>
+
+<!-- Link to grandchild2 -->
+<p><a [routerLink]="['/feature', { outlets: { aux1: ['child1', { outlets: { grand2: 'grandchild2' } }] } }]">
+  Go to Grandchild2
+</a></p>
+<div class="grandchild-container">
+  <router-outlet name="grand1"></router-outlet>
+  <router-outlet name="grand2"></router-outlet>
+</div>
